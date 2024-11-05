@@ -215,6 +215,7 @@ code.code-section {
     display: block;
     padding: 10px 7px;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 .right-col a {
@@ -299,6 +300,11 @@ code.code-section {
 .links {
     float: left;
     padding-bottom: 8px;
+}
+
+.no-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 
