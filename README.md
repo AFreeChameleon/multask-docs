@@ -3,15 +3,18 @@
     <img src="https://github.com/afreechameleon/multask-docs/blob/develop/images/gecko.png?raw=true" alt="Logo" width="150" height="150">
   </a>
 
-  <h3 align="center">Multask</h3>
+  <h1 align="center">Multask</h1>
 
   <p align="center">
-    A process manager for linux, mac & windows written in rust to simplify your developer environment.
+    A process manager for Linux, Mac, Windows & FreeBSD written in rust to simplify your developer environment.
+  </p>
+  <p align="center">
+    Designed to organise projects which need processes running at the same time with flexible resource limits for scaling.
   </p>
 </div>
 
 ## About
-This is the documentation for how to use Multiad.
+This is the documentation for how to use [Multask](https://github.com/AFreeChameleon/mult).
 
 ## Thanks
 Special thanks to:
