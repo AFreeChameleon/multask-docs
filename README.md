@@ -16,6 +16,8 @@
 ## About
 This is the documentation for how to use [Multask](https://github.com/AFreeChameleon/mult).
 
+Visit the page [here](https://afreechameleon.github.io/multask-docs/).
+
 ## Thanks
 Special thanks to:
 * [othneildrew](https://github.com/othneildrew) for the README template.
