@@ -301,6 +301,11 @@ code.code-section {
     padding-bottom: 8px;
 }
 
+.no-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 
 
 /* Break Points */

@@ -5,12 +5,10 @@ curl https://afreechameleon.github.io/multask-docs/install/packages/multask_deb-
 tar xvfz $PWD/mlt.tar.gz
 mv $PWD/mlt $HOME/.multi-tasker/bin
 rm $PWD/mlt.tar.gz
-for f in $HOME/.*rc
-do
-    if ! grep -q "export PATH=\"\$PATH:$HOME/.multi-tasker/bin\"" $f
-    then
-        echo "export PATH=\"\$PATH:$HOME/.multi-tasker/bin\"" >> $f
-    fi
-done
+if [[ $SHELL ~= "zsh" ]]; then
+    echo "export PATH=\"\$PATH:$HOME/.multi-tasker/bin\"" >> $HOME/.zshrc
+else
+    echo "export PATH=\"\$PATH:$HOME/.multi-tasker/bin\"" >> $HOME/.bashrc
+fi
 
-echo "To use mlt in this session, run: export PATH=\"\$PATH:$HOME/.multi-tasker/bin\""
+echo "To use multask in this session, run: export PATH=\"\$PATH:$HOME/.multi-tasker/bin\""
