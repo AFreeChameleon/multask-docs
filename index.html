@@ -39,8 +39,13 @@
 
                 <a class="title" href="#">Introduction</a>
                 
-                <a class="section" href="#supported-versions">Supported Versions</a>
-                <a class="section" href="#installation">Installation</a>
+                <div class="divider left"></div>
+
+                <a class="title" href="#installation">Installation</a>
+                <a class="section" href="#installation">Linux</a>
+                <a class="section" href="#mac">Mac</a>
+                <a class="section" href="#freebsd">FreeBSD</a>
+                <a class="section" href="#windows">Windows</a>
 
                 <div class="divider left"></div>
 
@@ -69,11 +74,11 @@
             
                 <div class="divider" style="width:24%; margin:30px 0;"></div>
 
-                <h1 id="getting-started">Installation</h2>
+                <h1  id="mac">Installation</h2>
 
                 <h2>Linux</h2>
 
-                <code class="code-section no-scroll">curl -s "https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/linux.sh" | bash</code> 
+                <code id="freebsd" class="code-section no-scroll">curl -s "https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/linux.sh" | bash</code> 
 
                 <h2>Mac</h2>
 
@@ -81,14 +86,14 @@
 
                 <h2>FreeBSD</h2>
 
-                <code class="code-section no-scroll">curl -s "https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/freebsd.sh" | bash</code> 
+                <code id="windows" class="code-section no-scroll">curl -s "https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/freebsd.sh" | bash</code> 
 
                 <p>Bash & ZSH officially supported.</p>
 
-                <h2>Windows</h2>
+                <h2 id="getting-started">Windows</h2>
 
-                <code class="code-section no-scroll">powershell -c "irm https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/win.ps1|iex"</code> 
-                
+                <code id="creating-a-process" class="code-section no-scroll">powershell -c "irm https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/win.ps1|iex"</code> 
+                 
                 <div class="divider" style="width:24%; margin:30px 0;"></div>
 
                 <h1>Getting Started</h1>
@@ -202,14 +207,14 @@
 
                 <h1>Bugs</h1>
 
-                <h2 id="getting-started">How to report</h2>
+                <h2>How to report</h2>
 
                 <p>
                     This is a very early alpha and while this has been tested on a few environments, issues on other environments (especially using shells other than bash and zsh)
                     are untested and may have some breaking issues.
                 </p>
                 <p>
-                    So please report any problems you run into (or feature requests) <a href="#">here</a>.
+                    So please report any problems you run into (or feature requests) <a target="_blank" href="https://github.com/AFreeChameleon/multask/issues">here</a>.
                 </p>
         </div>
     </div>
