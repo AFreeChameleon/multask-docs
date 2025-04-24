@@ -172,6 +172,19 @@
                 <h2>Task operations</h2>
 
                 <p>
+                    To see the full list of commands and args, run:
+                </p>
+                <code class="code-section">
+                    > mlt help
+                </code>
+                <p>
+                    Or, for each individual command, run:
+                </p>
+                <code class="code-section">
+                    > mlt &lt;command e.g create&gt; -h
+                </code>
+
+                <p>
                     To stop the task, run:
                 </p>
                 <code class="code-section">
@@ -190,6 +203,13 @@
                 </p>
                 <code class="code-section">
                     > mlt restart 1
+                </code>
+
+                <p>
+                    To edit the task's namespace or resource limits, run:
+                </p>
+                <code class="code-section">
+                    > mlt edit 1 -c &lt;cpu percentage&gt; -m &lt;memory usage&gt; -n &lt;namespace&gt;
                 </code>
 
                 <p>
