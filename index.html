@@ -1,0 +1,256 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multask | Documentation</title>
+    <meta name="description" content="Mult daemoniser documentation">
+    <meta name="author" content="AFreeChameleon">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/gecko.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/f55330514c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="navbar darker nav-top">
+        <div class="row content">
+            <div class="logo-container">
+                <img class="logo" src="images/gecko.png" />
+                Multask
+            </div>
+            <div class="flex-grow"></div>
+            <a class="right" style="text-decoration: underline;" target="_blank" href="https://github.com/AFreeChameleon/mult">
+                <i class="fa-brands fa-github"></i>&nbsp; Github
+            </a>
+        </div>
+    </div>
+
+    <div class="container dark">
+        <div class="row wrapper">
+
+            <div class="sidepanel">
+
+                <a class="title" href="#">Introduction</a>
+                
+                <div class="divider left"></div>
+
+                <a class="title" href="#installation">Installation</a>
+                <a class="section" href="#installation">Linux</a>
+                <a class="section" href="#mac">Mac</a>
+                <a class="section" href="#freebsd">FreeBSD (outdated)</a>
+                <a class="section" href="#windows">Windows</a>
+
+                <div class="divider left"></div>
+
+                <a class="title" href="#getting-started">Getting Started</a>
+
+                <a class="section" href="#creating-a-process">Creating a task</a>
+                <a class="section" href="#view-process-logs">View task logs</a>
+                <a class="section" href="#list-all-processes">List all tasks</a>
+                <a class="section" href="#process-operations">Task operations</a>
+                
+                <div class="divider left"></div>
+                
+                <a class="title" href="#bugs">Bugs</a>
+                <a class="section" href="#bugs">How to report</a>
+            </div>
+
+            <div class="right-col">
+                <h1>Introduction</h1>
+
+                <p id="supported-versions">Multask is a daemoniser built to simplify & organise your developer environment.</p>
+                <p>
+                    Designed to organise projects which need processes running at the same time with flexible resource limits for scaling.
+                </p>
+
+                <img class="table-img" id="installation" src="images/table.png" />
+            
+                <div class="divider" style="width:24%; margin:30px 0;"></div>
+
+                <h1  id="mac">Installation</h2>
+
+                <h2>Linux</h2>
+
+                <code id="freebsd" class="code-section no-scroll">curl -s "https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/linux.sh" | bash</code> 
+
+                <h2>Mac</h2>
+
+                <code class="code-section no-scroll">curl -s "https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/osx.sh" | bash</code> 
+
+                <h2>FreeBSD</h2>
+
+                <p>Multask's newest version is currently not supporting FreeBSD. So in the meantime the older version can still be used.
+                    <a id="windows" target="_blank" href="https://github.com/AFreeChameleon/multask/releases/tag/0.20.0">here</a>
+                </p>
+
+                <p>Bash & ZSH officially supported.</p>
+
+                <h2 id="getting-started">Windows</h2>
+
+                <code id="creating-a-process" class="code-section no-scroll">powershell -c "irm https://raw.githubusercontent.com/AFreeChameleon/multask-docs/refs/heads/master/install/scripts/win.ps1|iex"</code> 
+                 
+                <div class="divider" style="width:24%; margin:30px 0;"></div>
+
+                <h1>Getting Started</h1>
+
+                <h2>Creating your first task</h2>
+                
+                <p>
+                    After installing the program run:
+                </p>
+                <code class="code-section">> mlt create "ping 8.8.8.8"</code> 
+
+                <p id="view-process-logs">
+                    The command's output won't be shown in the console, but instead the message:
+                </p>
+                <code class="code-section"><span style="color: rgb(0, 204, 102);">[SUCCESS]</span> Task started with id 1.</code>
+                
+                <h2>View the task's output</h2>
+                
+                <p id="list-all-processes">
+                    No output from the command will be shown in the console because the process has been daemonized, and all output from the task will be stored.
+                </p>
+                <p>
+                    To view the task's logs run:
+                </p>
+                <code class="code-section">> mlt logs 1</code>
+
+                <h2>List all tasks</h2>
+
+                <p>
+                    To see all tasks you've created, run:
+                </p>
+                <code class="code-section">
+                    > mlt ls
+                </code>
+                <p>
+                    It will output a table like this:
+                    <!-- <img /> IMAGE OF TABLE -->
+                </p>
+                <code class="code-section pre-whitespace">+----+-----------+--------------+--------------------+-----+---------+--------+-----+---------+------------+
+| id | namespace | command      | location           | pid | status  | memory | cpu | runtime | monitoring |
++----+-----------+--------------+--------------------+-----+---------+--------+-----+---------+------------+
+| 1  | N/A       | ping 8.8.8.8 | /user/test/multask | N/A | Stopped | N/A    | N/A | N/A     | shallow    |
++----+-----------+--------------+--------------------+-----+---------+--------+-----+---------+------------+</code>
+                
+                <ul>
+                    <li>
+                        <code>id</code> - how you'll be referencing this task in other commands.
+                    </li>
+                    <li>
+                        <code>namespace</code> - another way to reference this and other tasks.
+                    </li>
+                    <li>
+                        <code>command</code> - what command was run.
+                    </li>
+                    <li>
+                        <code>location</code> - what folder/directory the command was run from.
+                    </li>
+                    <li>
+                        <code>pid</code> - process id in the OS.
+                    </li>
+                    <li>
+                        <code>status</code> - status of the command, either 'Running' or 'Stopped'.
+                    </li>
+                    <li id="process-operations">
+                        <code>memory</code> - amount of memory the task is using.
+                    </li>
+                    <li>
+                        <code>cpu</code> - percentage of CPU the task is using.
+                    </li>
+                    <li>
+                        <code>runtime</code> - how long this command has been running for.
+                    </li>
+                    <li>
+                        <code>monitoring</code> - how thorough the task is looking for potential child processes, 'shallow' is the default, 'deep' is for thorough searching.
+                    </li>
+                </ul>
+
+                <h2>Task operations</h2>
+
+                <p>
+                    To see the full list of commands and args, run:
+                </p>
+                <code class="code-section">
+                    > mlt help
+                </code>
+                <p>
+                    Or, for each individual command, run:
+                </p>
+                <code class="code-section">
+                    > mlt &lt;command e.g create&gt; -h
+                </code>
+
+                <p>
+                    To stop the task, run:
+                </p>
+                <code class="code-section">
+                    > mlt stop 1
+                </code>
+
+                <p>
+                    To start the task, run:
+                </p>
+                <code class="code-section">
+                    > mlt start 1
+                </code>
+
+                <p>
+                    To restart the task, run:
+                </p>
+                <code class="code-section">
+                    > mlt restart 1
+                </code>
+
+                <p>
+                    To edit the task's namespace or resource limits, run:
+                </p>
+                <code class="code-section">
+                    > mlt edit 1 -c &lt;cpu percentage&gt; -m &lt;memory usage&gt; -n &lt;namespace&gt;
+                </code>
+
+                <p>
+                    To delete the task and all logs, run:
+                </p>
+                <code class="code-section">
+                    > mlt delete 1
+                </code>
+
+                <p>
+                    If multask isn't working, you can run:
+                </p>
+                <code class="code-section">
+                    > mlt health
+                </code>
+                <p id="bugs">
+                    To see what's wrong with it. This is mainly for debugging purposes.
+                </p>
+                <p>
+                    Or you can run the command that fails with the -d flag to enable debug mode.
+                </p>
+
+                <div class="divider" style="width:24%; margin:30px 0;"></div>
+
+                <h1>Bugs</h1>
+
+                <h2>How to report</h2>
+
+                <p>
+                    This is a very early alpha and while this has been tested on a few environments, issues on other environments (especially using shells other than bash and zsh)
+                    are untested and may have some breaking issues.
+                </p>
+                <p>
+                    So please report any problems you run into (or feature requests) <a target="_blank" href="https://github.com/AFreeChameleon/multask/issues">here</a>.
+                </p>
+        </div>
+    </div>
+</body>
+
+</html>
