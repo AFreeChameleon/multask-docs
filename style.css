@@ -307,6 +307,10 @@ code.code-section {
     white-space: nowrap;
 }
 
+.table-img {
+    max-width: 100%;
+}
+
 
 
 /* Break Points */
